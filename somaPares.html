@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exibir Números Pares e <Soma-los></Soma-los></title>
+  <script>
+    function exibirNumerosPares() {
+      var valor = parseInt(document.getElementById("valor").value);
+      var resultado = document.getElementById("resultado");
+      var numerosPares = [];
+      var soma = 0;
+
+      for (var i = 1; i <= valor; i++) {
+        if (i % 2 === 0) {
+          numerosPares.push(i);
+          soma += i;
+        }
+      }
+
+      resultado.textContent = "Números Pares: " + numerosPares.join(", ") + " Soma: " + soma;
+    }
+  </script>
+</head>
+<body>
+  <h1>Exibir Números Pares e Soma</h1>
+
+  <label for="valor">Valor:</label>
+  <input type="number" id="valor" required>
+  <button onclick="exibirNumerosPares()">Exibir</button>
+
+  <div id="resultado"></div>
+</body>
+</html>

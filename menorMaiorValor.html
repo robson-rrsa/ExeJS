@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Visualizar numeros</title>
+</head>
+<body>
+  <h1>Manipulação de numeros</h1>
+
+  <form id="vetorForm">
+    <label for="valor">Valor:</label>
+    <input type="number" id="valor" required>
+    <br>
+    <button type="button" onclick="adicionarValor()">Adicionar Valor</button>
+  </form>
+
+  <button type="button" onclick="mostrarValores()">Mostrar Todos os Valores</button>
+  <button type="button" onclick="mostrarMaiorValor()">Mostrar Maior Valor</button>
+  <button type="button" onclick="mostrarMenorValor()">Mostrar Menor Valor</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    var valores = [];
+
+    // Função para adicionar um valor
+    function adicionarValor() {
+      var valor = parseFloat(document.getElementById("valor").value);
+      valores.push(valor);
+      document.getElementById("valor").value = "";
+    }
+
+    // mostrar todos os valores inseridos
+    function mostrarValores() {
+      document.getElementById("resultado").textContent = "Valores Inseridos: " + valores.join(", ");
+    }
+
+    // mostrar o maior valor
+    function mostrarMaiorValor() {
+      var maiorValor = Math.max(...valores);
+      document.getElementById("resultado").textContent = "Maior Valor: " + maiorValor;
+    }
+
+    // mostrar o menor valor
+    function mostrarMenorValor() {
+      var menorValor = Math.min(...valores);
+      document.getElementById("resultado").textContent = "Menor Valor: " + menorValor;
+    }
+  </script>
+</body>
+</html>
