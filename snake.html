@@ -48,10 +48,10 @@
     };
     let currentDirection = directions.RIGHT;
 
-    // Intervalo de atualização do jogo (em milissegundos)
+    // Intervalo de atualização do jogo (em ms)
     const updateInterval = 200;
 
-    // Inicialização do tabuleiro
+    // tabuleiro
     function createBoard() {
       for (let row = 0; row < rows; row++) {
         board[row] = [];
@@ -60,8 +60,6 @@
         }
       }
     }
-
-    // Renderização do tabuleiro
     function drawBoard() {
       let snakeBoardElement = document.getElementById("snake-board");
       snakeBoardElement.innerHTML = "";
@@ -82,7 +80,7 @@
       }
     }
 
-    // Inicialização da cobra
+    // cobra
     function createSnake() {
       const initialSnakeSize = 4;
       const initialSnakeRow = Math.floor(rows / 2);
@@ -139,7 +137,7 @@
       head.row += currentDirection.y;
       head.col += currentDirection.x;
 
-      // Verificar se a cobra atingiu uma parede ou a si mesma
+      // Verificar se a cobra atingiu algo
       if (
         head.row < 0 ||
         head.row >= rows ||
